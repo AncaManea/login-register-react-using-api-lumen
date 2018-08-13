@@ -26,8 +26,9 @@ export default class Login extends Component {
             //old code  sessionStorage.setItem('token', response.data.data.token);
             //response.data.data.token nu este definit, php intoarce cu numele jwt
             sessionStorage.setItem('token', response.data.data.jwt);
+            sessionStorage.setItem('user_id', response.data.data.user.id);
             this.props.history.push('/users');
-           // console.log(response.data.data.jwt); 
+          //  console.log(response.data.data.user.id); 
         } else {
             //afisam eroare
             this.refs.success.innerHTML = response.data.errorMessage;
